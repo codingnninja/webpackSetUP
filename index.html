@@ -1,0 +1,284 @@
+<html>
+   <head>
+      <title>The Materialize Form Example</title>
+      <meta name = "viewport" content = "width = device-width, initial-scale = 1">      
+      <link rel = "stylesheet"
+         href = "https://fonts.googleapis.com/icon?family=Material+Icons">
+      <link rel = "stylesheet"
+         href = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+      <script type = "text/javascript"
+         src = "https://code.jquery.com/jquery-2.1.1.min.js"></script>           
+      <script src = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js">
+      </script> 
+   </head>
+   
+   <body class = "container">   
+      <div class = "row">
+         <form class = "col s12">
+            <div class = "row">
+               <div class = "input-field col s6">
+                  <i class = "material-icons prefix">account_circle</i>
+                  <input placeholder = "Username" value = "Mahesh" id = "name"
+                     type = "text" class = "active validate" required />
+                  <label for = "name">Username</label>
+               </div>
+               
+               <div class = "input-field col s6">      
+                  <label for = "password">Password</label>
+                  <input id = "password" type = "password" placeholder = "Password"
+                     class = "validate" required />          
+               </div>
+            </div>
+            
+            <div class = "row">
+               <div class = "input-field col s12">
+                  <input placeholder = "Email" id = "email" type = "email"
+                     class = "validate">
+                  <label for = "email">Email</label>
+               </div>
+            </div>
+            
+            <div class = "row">
+               <div class = "input-field col s12">
+                  <i class = "material-icons prefix">mode_edit</i>
+                  <textarea id = "address" class = "materialize-textarea"></textarea>
+                  <label for = "address">Address</label>
+               </div>
+            </div>
+            
+            <div class = "row">
+               <div class = "input-field col s12">
+                  <input placeholder = "Comments (Disabled)" id = "comments"
+                     type = "text" disabled />
+                  <label for = "comments">Comments</label>
+               </div>
+            </div>
+            
+            <div class = "row">
+               <div class = "input-field col s12">
+                  <p>
+                     <input id = "married" type = "checkbox" checked = "checked" />
+                     <label for = "married">Married</label>
+                  </p>
+                  
+                  <p>
+                     <input id = "single" type = "checkbox" class = "filled-in" />
+                     <label for = "single">Single</label>
+                  </p>
+                  
+                  <p>
+                     <input id = "dontknow" type = "checkbox" disabled = "disabled" />              
+                     <label for = "dontknow">Don't know (Disabled)</label>
+                  </p>
+               </div>
+            </div>
+            
+            <div class = "row">
+               <div class = "input-field col s12">
+                   <p>
+                     <input id = "male" type = "radio" name = "gender"
+                        value = "male" checked />
+                     <label for = "male">Male</label>
+                  </p>
+                  
+                  <p>
+                     <input id = "female" type = "radio" name = "gender"
+                        value = "female" checked />
+                     <label for = "female">Female</label>
+                  </p>
+                  
+                  <p>
+                     <input id = "dontknow1" type = "radio" name = "gender"
+                        value = "female" disabled />
+                     <label for = "dontknow1">Don't know (Disabled)</label>
+                  </p>
+               </div>
+            </div>           
+         </form>       
+      </div>
+   </body>   
+</html>
+
+
+<div class="row">
+  <form class="col s12">
+    <div class="row">
+      <div class="input-field col s12">
+        <input placeholder="Event title" id="title" type="text" class="validate">
+        <label for="title">Title</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s6">
+        <select>
+          <option value="" disabled selected>Choose event type</option>
+          <option value="1">Option 1</option>
+          <option value="2">Option 2</option>
+          <option value="3">Option 3</option>
+        </select>
+        <label>Event type</label>
+      </div>
+      <div class="input-field col s6">
+        <select multiple>
+          <option value="" disabled selected>Choose style(s)</option>
+          <option value="1">Option 1</option>
+          <option value="2">Option 2</option>
+          <option value="3">Option 3</option>
+        </select>
+        <label>Styles</label>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="input-field col s6">
+        <label>Begin date</label>
+        <input id="beginDate" type="date" class="datepicker">
+        
+      </div>
+      <div class="input-field col s6">
+        <label>End date</label>
+        <input id="endDate" type="date" class="datepicker">
+        
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <input placeholder="Who is organizing the event?" id="organizer" type="text" class="validate">
+        <label for="organizer">Organizer</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s6">
+        <input placeholder="http://www.mywebsite.com" id="website" type="text" class="validate">
+        <label for="website">Website</label>
+      </div>
+      <div class="input-field col s6">
+        <input placeholder="contact@myweb.com" id="email" type="text" class="validate">
+        <label for="email">Contact email</label>
+      </div>
+    </div>
+
+    <div class="row">
+          <div class="input-field col s12">
+            <textarea id="description" class="materialize-textarea" length="140"></textarea>
+            <label for="description">Describe the event in a tweet!</label>
+          </div>
+        </div>
+  </form>
+</div>
+
+$('.datepicker').pickadate({
+    min: new Date(),
+    selectMonths: true, // Creates a dropdown to control month
+    selectYears: 15, // Creates a dropdown of 15 years to control year
+    firstDay: 1
+  });
+
+var picker = $('#beginDate').pickadate('picker');
+picker.set('select', new Date());
+var picker = $('#endDate').pickadate('picker');
+picker.set('select', new Date());
+
+
+ $('select').material_select();
+
+ <div class="container">
+    <div class="row">
+        <div class="col m10 offset-m1 s12">
+            <h2 class="center-align">Contact Form</h2>
+            <div class="row">
+                <form class="col s12">
+                    <div class="row">
+                        <div class="input-field col m6 s12">
+                            <input id="first_name" type="text" class="validate">
+                            <label for="first_name">First Name</label>
+                        </div>
+                        <div class="input-field col m6 s12">
+                            <input id="last_name" type="text" class="validate">
+                            <label for="last_name">Last Name</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col m6 s12">
+                            <i class="mdi-content-mail prefix"></i>
+                            <input id="email" type="email" class="validate" required>
+                            <label for="email">Email</label>
+                        </div>
+                        <div class="input-field col m6 s12">
+                            <i class="mdi-maps-store-mall-directory prefix"></i>
+                            <input id="company" type="text" class="validate">
+                            <label for="company">Company</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                          <textarea id="message" class="materialize-textarea"></textarea>
+                          <label for="message">Message</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                          <label for="budget">Budget</label>
+                          <br/>
+                        </div>
+                        <div class="input-field col s12">
+                            <select class="browser-default" id="budget">
+                              <option value="" selected disabled>Choose your option</option>
+                              <option value="1">&lt; $4000</option>
+                              <option value="2">$4000 - $9000</option>
+                              <option value="3">&gt; $9000</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                          <label>How Did You Find Us?</label>
+                          <br/>
+                        </div>
+                        <div class="input-field col m3 s6 center-align">
+                          <input name="group1" type="radio" id="google" />
+                          <label for="google">Google</label>
+                        </div>
+                        <div class="input-field col m3 s6 center-align">
+                          <input name="group1" type="radio" id="customer" />
+                          <label for="customer">Customer</label>
+                        </div>
+                        <div class="input-field col m3 s6 center-align">
+                          <input name="group1" type="radio" id="store" />
+                          <label for="store">Store</label>
+                        </div>
+                        <div class="input-field col m3 s6 center-align">
+                          <input name="group1" type="radio" id="other" />
+                          <label for="other">Other</label>
+                        </div>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                          <label>Communication Preferences</label>
+                          <br/>
+                        </div>
+                        <div class="input-field col m4 s12 center-align">
+                          <input name="group2" type="checkbox" id="emailComm" />
+                          <label for="emailComm">Email</label>
+                        </div>
+                        <div class="input-field col m4 s12 center-align">
+                          <input name="group2" type="checkbox" id="callComm" />
+                          <label for="callComm">Call Me</label>
+                        </div>
+                        <div class="input-field col m4 s12 center-align">
+                          <input name="group2" type="checkbox" id="newsletter" />
+                          <label for="newsletter">Newsletter</label>
+                        </div>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="row">
+                        <div class="col m12">
+                         <p class="right-align"><button class="btn btn-large waves-effect waves-light" type="button" name="action">Send Message</button></p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
